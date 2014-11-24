@@ -44,9 +44,9 @@ end component;
 signal Q0, Q1, Q2 : std_logic;
 begin
 
---labeld: DFF port map (Q2, Q1, Q0);
---dff1 : DFF port map (Q0, CLK, Q1);
---dff2 : DFF port map (Q1, CLK, Q2);
---De_Button <= Q0 and Q1 and not Q2;
+DFF0 : DFF port map (Button, CLK, Q0);
+DFF1 : DFF port map (Q0, CLK, Q1);
+DFF2 : DFF port map (Q1, CLK, Q2);
+De_Button <= Q0 and Q1 and not Q2;
 end Behavioral;
 
