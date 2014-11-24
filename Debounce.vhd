@@ -41,12 +41,23 @@ component DFF is
 		   Q : out std_logic);
 end component;
 
-signal Q0, Q1, Q2 : std_logic;
-begin
+--DEBOUNCE #1
+--signal Q0, Q1, Q2 : std_logic;
+--begin
+--
+--DFF0 : DFF port map (Button, CLK, Q0);
+--DFF1 : DFF port map (Q0, CLK, Q1);
+--DFF2 : DFF port map (Q1, CLK, Q2);
+--De_Button <= Q0 and Q1 and not Q2;
 
-DFF0 : DFF port map (Button, CLK, Q0);
-DFF1 : DFF port map (Q0, CLK, Q1);
-DFF2 : DFF port map (Q1, CLK, Q2);
-De_Button <= Q0 and Q1 and not Q2;
+--DEBOUNCE #2 (state machine that detects three 1s in a row)
+signal A,B,Anext,Bnext, X : std_logic;
+begin
+X <= Button;
+Anext <= B and X;
+Bnext <= (not A) and (not B) and X;
+DFFA : DFF port map (Anext, CLK, A);
+DFFB : DFF port map (Bnext, CLK, B);
+De_Button <= A and X;
 end Behavioral;
 
