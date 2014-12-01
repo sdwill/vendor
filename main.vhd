@@ -31,9 +31,11 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity main is
 	Port (
-			LED : in STD_LOGIC_VECTOR(7 DOWNTO 0);
+			LEDS : in STD_LOGIC_VECTOR(7 DOWNTO 0);
 			c25, c50, c100 : in STD_LOGIC; -- 3 pushbuttons for 25, 50, and 100 dollars
 end main;
+
+-- some bullshit
 
 architecture Behavioral of main is
 
