@@ -31,18 +31,19 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity main is
 	Port (
-<<<<<<< HEAD
-			LED : in STD_LOGIC_VECTOR(7 DOWNTO 0);
+			LED            : out STD_LOGIC_VECTOR(7 DOWNTO 0);
 			c25, c50, c100 : in STD_LOGIC; -- 3 pushbuttons for 25, 50, and 100 cents
-=======
-			LEDS : in STD_LOGIC_VECTOR(7 DOWNTO 0);
-			c25, c50, c100 : in STD_LOGIC; -- 3 pushbuttons for 25, 50, and 100 dollars
->>>>>>> origin/master
+			item           : in STD_LOGIC_VECTOR(3 DOWNTO 0); -- 4 switches for the different items
+			reset  			: in STD_LOGIC;
+			clk_100MHz	   : IN STD_LOGIC);
 end main;
 
--- some bullshit
-
 architecture Behavioral of main is
+
+component Debounce is
+	port (Button, CLK : in std_logic;
+		  De_Button : out std_logic);
+end component;
 
 -- Create a new datatype called state_type whose legal values are any dollar value
 -- between $0.00 and $2.00 (states d0-d8), or any change value between $0.00 and
