@@ -1,33 +1,33 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2014-12-04T15:31:29</DateModified>
-  <ModuleName>Debounce</ModuleName>
-  <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>C:/Users/Scott/Google Drive/School Docs/EE/EE478/Final Project/vendor/iseconfig/Debounce.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/Scott/Google Drive/School Docs/EE/EE478/Final Project/vendor\</ImplementationReportsDirectory>
-  <DateInitialized>2014-12-01T16:52:11</DateInitialized>
+  <DateModified>2014-12-04T14:57:17</DateModified>
+  <ModuleName>fourbit_counter</ModuleName>
+  <SummaryTimeStamp>2014-11-24T12:04:20</SummaryTimeStamp>
+  <SavedFilePath>G:/UB/jkff4bitcounter/iseconfig/fourbit_counter.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>G:/UB/jkff4bitcounter\</ImplementationReportsDirectory>
+  <DateInitialized>2014-09-29T14:29:07</DateInitialized>
   <EnableMessageFiltering>true</EnableMessageFiltering>
  </header>
  <body>
   <viewgroup label="Design Overview" >
-   <view inputState="Unknown" program="implementation" ShowPartitionData="false" type="FPGASummary" file="Debounce_summary.html" label="Summary" >
+   <view inputState="Unknown" program="implementation" ShowPartitionData="false" type="FPGASummary" file="fourbit_counter_summary.html" label="Summary" >
     <toc-item title="Design Overview" target="Design Overview" />
     <toc-item title="Design Utilization Summary" target="Design Utilization Summary" />
     <toc-item title="Performance Summary" target="Performance Summary" />
     <toc-item title="Failing Constraints" target="Failing Constraints" />
     <toc-item title="Detailed Reports" target="Detailed Reports" />
    </view>
-   <view inputState="Unknown" program="implementation" contextTags="FPGA_ONLY" hidden="true" type="HTML" file="Debounce_envsettings.html" label="System Settings" />
-   <view inputState="Translated" program="map" locator="MAP_IOB_TABLE" contextTags="FPGA_ONLY" type="IOBProperties" file="Debounce_map.xrpt" label="IOB Properties" />
-   <view inputState="Translated" program="map" contextTags="FPGA_ONLY" hidden="true" type="Control_Sets" file="Debounce_map.xrpt" label="Control Set Information" />
-   <view inputState="Translated" program="map" locator="MAP_MODULE_HIERARCHY" contextTags="FPGA_ONLY" type="Module_Utilization" file="Debounce_map.xrpt" label="Module Level Utilization" />
-   <view inputState="Mapped" program="par" locator="CONSTRAINT_TABLE" contextTags="FPGA_ONLY" type="ConstraintsData" file="Debounce.ptwx" label="Timing Constraints" translator="ptwxToTableXML.xslt" />
-   <view inputState="Mapped" program="par" locator="PAR_PINOUT_BY_PIN_NUMBER" contextTags="FPGA_ONLY" type="PinoutData" file="Debounce_par.xrpt" label="Pinout Report" />
-   <view inputState="Mapped" program="par" locator="PAR_CLOCK_TABLE" contextTags="FPGA_ONLY" type="ClocksData" file="Debounce_par.xrpt" label="Clock Report" />
-   <view inputState="Mapped" program="par" contextTags="FPGA_ONLY,EDK_OFF" type="Timing_Analyzer" file="Debounce.twx" label="Static Timing" />
-   <view inputState="Translated" program="cpldfit" contextTags="CPLD_ONLY,EDK_OFF" hidden="true" type="EXTERNAL_HTML" file="Debounce_html/fit/report.htm" label="CPLD Fitter Report" />
-   <view inputState="Fitted" program="taengine" contextTags="CPLD_ONLY,EDK_OFF" hidden="true" type="EXTERNAL_HTML" file="Debounce_html/tim/report.htm" label="CPLD Timing Report" />
+   <view inputState="Unknown" program="implementation" contextTags="FPGA_ONLY" hidden="true" type="HTML" file="fourbit_counter_envsettings.html" label="System Settings" />
+   <view inputState="Translated" program="map" locator="MAP_IOB_TABLE" contextTags="FPGA_ONLY" type="IOBProperties" file="fourbit_counter_map.xrpt" label="IOB Properties" />
+   <view inputState="Translated" program="map" contextTags="FPGA_ONLY" hidden="true" type="Control_Sets" file="fourbit_counter_map.xrpt" label="Control Set Information" />
+   <view inputState="Translated" program="map" locator="MAP_MODULE_HIERARCHY" contextTags="FPGA_ONLY" type="Module_Utilization" file="fourbit_counter_map.xrpt" label="Module Level Utilization" />
+   <view inputState="Mapped" program="par" locator="CONSTRAINT_TABLE" contextTags="FPGA_ONLY" type="ConstraintsData" file="fourbit_counter.ptwx" label="Timing Constraints" translator="ptwxToTableXML.xslt" />
+   <view inputState="Mapped" program="par" locator="PAR_PINOUT_BY_PIN_NUMBER" contextTags="FPGA_ONLY" type="PinoutData" file="fourbit_counter_par.xrpt" label="Pinout Report" />
+   <view inputState="Mapped" program="par" locator="PAR_CLOCK_TABLE" contextTags="FPGA_ONLY" type="ClocksData" file="fourbit_counter_par.xrpt" label="Clock Report" />
+   <view inputState="Mapped" program="par" contextTags="FPGA_ONLY,EDK_OFF" type="Timing_Analyzer" file="fourbit_counter.twx" label="Static Timing" />
+   <view inputState="Translated" program="cpldfit" contextTags="CPLD_ONLY,EDK_OFF" hidden="true" type="EXTERNAL_HTML" file="fourbit_counter_html/fit/report.htm" label="CPLD Fitter Report" />
+   <view inputState="Fitted" program="taengine" contextTags="CPLD_ONLY,EDK_OFF" hidden="true" type="EXTERNAL_HTML" file="fourbit_counter_html/tim/report.htm" label="CPLD Timing Report" />
   </viewgroup>
   <viewgroup label="XPS Errors and Warnings" >
    <view program="platgen" WrapMessages="true" contextTags="EDK_ON" hidden="true" type="MessageList" hideColumns="Filtered" file="__xps/ise/_xmsgs/platgen.xmsgs" label="Platgen Messages" />
@@ -38,7 +38,7 @@
    <view inputState="PreSynthesized" program="platgen" contextTags="EDK_ON" hidden="true" type="Secondary_Report" file="platgen.log" label="Platgen Log File" />
    <view inputState="PreSynthesized" program="simgen" contextTags="EDK_ON" hidden="true" type="Secondary_Report" file="simgen.log" label="Simgen Log File" />
    <view inputState="PreSynthesized" program="bitinit" contextTags="EDK_ON" hidden="true" type="Secondary_Report" file="bitinit.log" label="BitInit Log File" />
-   <view inputState="PreSynthesized" program="system" contextTags="EDK_ON" hidden="true" type="Secondary_Report" file="Debounce.log" label="System Log File" />
+   <view inputState="PreSynthesized" program="system" contextTags="EDK_ON" hidden="true" type="Secondary_Report" file="fourbit_counter.log" label="System Log File" />
   </viewgroup>
   <viewgroup label="Errors and Warnings" >
    <view program="pn" WrapMessages="true" contextTags="EDK_OFF" type="MessageList" hideColumns="Filtered, New" file="_xmsgs/pn_parser.xmsgs" label="Parser Messages" />
@@ -54,7 +54,7 @@
    <view inputState="Current" program="fitting" WrapMessages="true" fileList="_xmsgs/xst.xmsgs,_xmsgs/ngdbuild.xmsgs,_xmsgs/cpldfit.xmsgs,_xmsgs/xpwr.xmsgs" contextTags="CPLD_ONLY,EDK_OFF" hidden="true" type="CPLD_MessageList" hideColumns="Filtered" file="_xmsgs/*.xmsgs" label="All Implementation Messages (CPLD)" />
   </viewgroup>
   <viewgroup label="Detailed Reports" >
-   <view program="xst" contextTags="XST_ONLY,EDK_OFF" hidden="false" type="Report" file="Debounce.syr" label="Synthesis Report" >
+   <view program="xst" contextTags="XST_ONLY,EDK_OFF" hidden="false" type="Report" file="fourbit_counter.syr" label="Synthesis Report" >
     <toc-item title="Top of Report" target="Copyright " searchDir="Forward" />
     <toc-item title="Synthesis Options Summary" target="   Synthesis Options Summary   " />
     <toc-item title="HDL Compilation" target="   HDL Compilation   " />
@@ -80,15 +80,15 @@
     <toc-item title="Timing Details" target="Timing Details" subItemLevel="2" />
     <toc-item title="Cross Clock Domains Report" target="Cross Clock Domains Report:" subItemLevel="2" />
    </view>
-   <view program="synplify" contextTags="SYNPLIFY_ONLY,EDK_OFF" hidden="true" type="Report" file="Debounce.srr" label="Synplify Report" />
-   <view program="precision" contextTags="PRECISION_ONLY,EDK_OFF" hidden="true" type="Report" file="Debounce.prec_log" label="Precision Report" />
-   <view inputState="Synthesized" program="ngdbuild" type="Report" file="Debounce.bld" label="Translation Report" >
+   <view program="synplify" contextTags="SYNPLIFY_ONLY,EDK_OFF" hidden="true" type="Report" file="fourbit_counter.srr" label="Synplify Report" />
+   <view program="precision" contextTags="PRECISION_ONLY,EDK_OFF" hidden="true" type="Report" file="fourbit_counter.prec_log" label="Precision Report" />
+   <view inputState="Synthesized" program="ngdbuild" type="Report" file="fourbit_counter.bld" label="Translation Report" >
     <toc-item title="Top of Report" target="Copyright (c)" searchDir="Forward" />
     <toc-item title="Command Line" target="Command Line:" />
     <toc-item title="Partition Status" target="Partition Implementation Status" />
     <toc-item title="Final Summary" target="NGDBUILD Design Results Summary:" />
    </view>
-   <view inputState="Translated" program="map" contextTags="FPGA_ONLY" type="Report" file="Debounce_map.mrp" label="Map Report" >
+   <view inputState="Translated" program="map" contextTags="FPGA_ONLY" type="Report" file="fourbit_counter_map.mrp" label="Map Report" >
     <toc-item title="Top of Report" target="Release" searchDir="Forward" />
     <toc-item title="Section 1: Errors" target="Section 1 -" searchDir="Backward" />
     <toc-item title="Section 2: Warnings" target="Section 2 -" searchDir="Backward" />
@@ -104,7 +104,7 @@
     <toc-item title="Section 12: Control Set Information" target="Section 12 -" searchDir="Backward" />
     <toc-item title="Section 13: Utilization by Hierarchy" target="Section 13 -" searchDir="Backward" />
    </view>
-   <view inputState="Mapped" program="par" contextTags="FPGA_ONLY" type="Report" file="Debounce.par" label="Place and Route Report" >
+   <view inputState="Mapped" program="par" contextTags="FPGA_ONLY" type="Report" file="fourbit_counter.par" label="Place and Route Report" >
     <toc-item title="Top of Report" target="Copyright (c)" searchDir="Forward" />
     <toc-item title="Device Utilization" target="Device Utilization Summary:" />
     <toc-item title="Router Information" target="Starting Router" />
@@ -113,7 +113,7 @@
     <toc-item title="Timing Results" target="Timing Score:" />
     <toc-item title="Final Summary" target="Peak Memory Usage:" />
    </view>
-   <view inputState="Routed" program="trce" contextTags="FPGA_ONLY" type="Report" file="Debounce.twr" label="Post-PAR Static Timing Report" >
+   <view inputState="Routed" program="trce" contextTags="FPGA_ONLY" type="Report" file="fourbit_counter.twr" label="Post-PAR Static Timing Report" >
     <toc-item title="Top of Report" target="Copyright (c)" searchDir="Forward" />
     <toc-item title="Timing Report Description" target="Device,package,speed:" />
     <toc-item title="Informational Messages" target="INFO:" />
@@ -124,22 +124,22 @@
     <toc-item title="Timing Summary" target="Timing summary:" />
     <toc-item title="Trace Settings" target="Trace Settings:" />
    </view>
-   <view inputState="Translated" program="cpldfit" contextTags="CPLD_ONLY,EDK_OFF" hidden="true" type="Report" file="Debounce.rpt" label="CPLD Fitter Report (Text)" >
+   <view inputState="Translated" program="cpldfit" contextTags="CPLD_ONLY,EDK_OFF" hidden="true" type="Report" file="fourbit_counter.rpt" label="CPLD Fitter Report (Text)" >
     <toc-item title="Top of Report" target="cpldfit:" searchDir="Forward" />
     <toc-item title="Resources Summary" target="**  Mapped Resource Summary  **" />
     <toc-item title="Pin Resources" target="** Pin Resources **" />
     <toc-item title="Global Resources" target="** Global Control Resources **" />
    </view>
-   <view inputState="Fitted" program="taengine" contextTags="CPLD_ONLY,EDK_OFF" hidden="true" type="Report" file="Debounce.tim" label="CPLD Timing Report (Text)" >
+   <view inputState="Fitted" program="taengine" contextTags="CPLD_ONLY,EDK_OFF" hidden="true" type="Report" file="fourbit_counter.tim" label="CPLD Timing Report (Text)" >
     <toc-item title="Top of Report" target="Performance Summary Report" searchDir="Forward" />
     <toc-item title="Performance Summary" target="Performance Summary:" />
    </view>
-   <view inputState="Routed" program="xpwr" contextTags="EDK_OFF" type="Report" file="Debounce.pwr" label="Power Report" >
+   <view inputState="Routed" program="xpwr" contextTags="EDK_OFF" type="Report" file="fourbit_counter.pwr" label="Power Report" >
     <toc-item title="Top of Report" target="Copyright (c)" searchDir="Forward" />
     <toc-item title="Power summary" target="Power summary" />
     <toc-item title="Thermal summary" target="Thermal summary" />
    </view>
-   <view inputState="Routed" program="bitgen" contextTags="FPGA_ONLY" type="Report" file="Debounce.bgn" label="Bitgen Report" >
+   <view inputState="Routed" program="bitgen" contextTags="FPGA_ONLY" type="Report" file="fourbit_counter.bgn" label="Bitgen Report" >
     <toc-item title="Top of Report" target="Copyright (c)" searchDir="Forward" />
     <toc-item title="Bitgen Options" target="Summary of Bitgen Options:" />
     <toc-item title="Final Summary" target="DRC detected" />
@@ -147,20 +147,20 @@
   </viewgroup>
   <viewgroup label="Secondary Reports" >
    <view inputState="PreSynthesized" program="isim" hidden="if_missing" type="Secondary_Report" file="isim.log" label="ISIM Simulator Log" />
-   <view inputState="Synthesized" program="netgen" hidden="if_missing" type="Secondary_Report" file="netgen/synthesis/Debounce_synthesis.nlf" label="Post-Synthesis Simulation Model Report" >
+   <view inputState="Synthesized" program="netgen" hidden="if_missing" type="Secondary_Report" file="netgen/synthesis/fourbit_counter_synthesis.nlf" label="Post-Synthesis Simulation Model Report" >
     <toc-item title="Top of Report" target="Release" searchDir="Forward" />
    </view>
-   <view inputState="Translated" program="netgen" hidden="if_missing" type="Secondary_Report" file="netgen/translate/Debounce_translate.nlf" label="Post-Translate Simulation Model Report" >
+   <view inputState="Translated" program="netgen" hidden="if_missing" type="Secondary_Report" file="netgen/translate/fourbit_counter_translate.nlf" label="Post-Translate Simulation Model Report" >
     <toc-item title="Top of Report" target="Release" searchDir="Forward" />
    </view>
-   <view inputState="Translated" program="netgen" hidden="if_missing" type="Secondary_Report" file="Debounce_tran_fecn.nlf" label="Post-Translate Formality Netlist Report" />
-   <view inputState="Translated" program="map" contextTags="FPGA_ONLY" hidden="true" type="Secondary_Report" file="Debounce_map.map" label="Map Log File" >
+   <view inputState="Translated" program="netgen" hidden="if_missing" type="Secondary_Report" file="fourbit_counter_tran_fecn.nlf" label="Post-Translate Formality Netlist Report" />
+   <view inputState="Translated" program="map" contextTags="FPGA_ONLY" hidden="true" type="Secondary_Report" file="fourbit_counter_map.map" label="Map Log File" >
     <toc-item title="Top of Report" target="Release" searchDir="Forward" />
     <toc-item title="Design Information" target="Design Information" />
     <toc-item title="Design Summary" target="Design Summary" />
    </view>
    <view inputState="Routed" program="smartxplorer" contextTags="FPGA_ONLY" hidden="if_missing" type="Secondary_Report" file="smartxplorer_results/smartxplorer.txt" label="SmartXplorer Report" />
-   <view inputState="Mapped" program="trce" contextTags="FPGA_ONLY" hidden="if_missing" type="Secondary_Report" file="Debounce_preroute.twr" label="Post-Map Static Timing Report" >
+   <view inputState="Mapped" program="trce" contextTags="FPGA_ONLY" hidden="if_missing" type="Secondary_Report" file="fourbit_counter_preroute.twr" label="Post-Map Static Timing Report" >
     <toc-item title="Top of Report" target="Copyright (c)" searchDir="Forward" />
     <toc-item title="Timing Report Description" target="Device,package,speed:" />
     <toc-item title="Informational Messages" target="INFO:" />
@@ -171,43 +171,43 @@
     <toc-item title="Timing Summary" target="Timing summary:" />
     <toc-item title="Trace Settings" target="Trace Settings:" />
    </view>
-   <view inputState="Mapped" program="netgen" hidden="if_missing" type="Secondary_Report" file="netgen/map/Debounce_map.nlf" label="Post-Map Simulation Model Report" />
-   <view inputState="Mapped" program="map" contextTags="FPGA_ONLY" hidden="if_missing" type="Secondary_Report" file="Debounce_map.psr" label="Physical Synthesis Report" >
+   <view inputState="Mapped" program="netgen" hidden="if_missing" type="Secondary_Report" file="netgen/map/fourbit_counter_map.nlf" label="Post-Map Simulation Model Report" />
+   <view inputState="Mapped" program="map" contextTags="FPGA_ONLY" hidden="if_missing" type="Secondary_Report" file="fourbit_counter_map.psr" label="Physical Synthesis Report" >
     <toc-item title="Top of Report" target="Copyright (c)" searchDir="Forward" />
    </view>
-   <view inputState="Mapped" program="par" contextTags="FPGA_ONLY" hidden="true" type="Pad_Report" file="Debounce_pad.txt" label="Pad Report" >
+   <view inputState="Mapped" program="par" contextTags="FPGA_ONLY" hidden="true" type="Pad_Report" file="fourbit_counter_pad.txt" label="Pad Report" >
     <toc-item title="Top of Report" target="Copyright (c)" searchDir="Forward" />
    </view>
-   <view inputState="Mapped" program="par" contextTags="FPGA_ONLY" hidden="true" type="Secondary_Report" file="Debounce.unroutes" label="Unroutes Report" >
+   <view inputState="Mapped" program="par" contextTags="FPGA_ONLY" hidden="true" type="Secondary_Report" file="fourbit_counter.unroutes" label="Unroutes Report" >
     <toc-item title="Top of Report" target="Copyright (c)" searchDir="Forward" />
    </view>
-   <view inputState="Mapped" program="map" contextTags="FPGA_ONLY" hidden="if_missing" type="Secondary_Report" file="Debounce_preroute.tsi" label="Post-Map Constraints Interaction Report" >
+   <view inputState="Mapped" program="map" contextTags="FPGA_ONLY" hidden="if_missing" type="Secondary_Report" file="fourbit_counter_preroute.tsi" label="Post-Map Constraints Interaction Report" >
     <toc-item title="Top of Report" target="Release" searchDir="Forward" />
    </view>
-   <view inputState="Mapped" program="par" contextTags="FPGA_ONLY" hidden="if_missing" type="Secondary_Report" file="Debounce.grf" label="Guide Results Report" />
-   <view inputState="Routed" program="par" contextTags="FPGA_ONLY" hidden="if_missing" type="Secondary_Report" file="Debounce.dly" label="Asynchronous Delay Report" />
-   <view inputState="Routed" program="par" contextTags="FPGA_ONLY" hidden="if_missing" type="Secondary_Report" file="Debounce.clk_rgn" label="Clock Region Report" />
-   <view inputState="Routed" program="par" contextTags="FPGA_ONLY" hidden="if_missing" type="Secondary_Report" file="Debounce.tsi" label="Post-Place and Route Constraints Interaction Report" >
+   <view inputState="Mapped" program="par" contextTags="FPGA_ONLY" hidden="if_missing" type="Secondary_Report" file="fourbit_counter.grf" label="Guide Results Report" />
+   <view inputState="Routed" program="par" contextTags="FPGA_ONLY" hidden="if_missing" type="Secondary_Report" file="fourbit_counter.dly" label="Asynchronous Delay Report" />
+   <view inputState="Routed" program="par" contextTags="FPGA_ONLY" hidden="if_missing" type="Secondary_Report" file="fourbit_counter.clk_rgn" label="Clock Region Report" />
+   <view inputState="Routed" program="par" contextTags="FPGA_ONLY" hidden="if_missing" type="Secondary_Report" file="fourbit_counter.tsi" label="Post-Place and Route Constraints Interaction Report" >
     <toc-item title="Top of Report" target="Copyright (c)" searchDir="Forward" />
    </view>
-   <view inputState="Routed" program="netgen" hidden="if_missing" type="Secondary_Report" file="Debounce_par_fecn.nlf" label="Post-Place and Route Formality Netlist Report" />
-   <view inputState="Routed" program="netgen" contextTags="FPGA_ONLY" hidden="if_missing" type="Secondary_Report" file="netgen/par/Debounce_timesim.nlf" label="Post-Place and Route Simulation Model Report" />
-   <view inputState="Routed" program="netgen" hidden="if_missing" type="Secondary_Report" file="Debounce_sta.nlf" label="Primetime Netlist Report" >
+   <view inputState="Routed" program="netgen" hidden="if_missing" type="Secondary_Report" file="fourbit_counter_par_fecn.nlf" label="Post-Place and Route Formality Netlist Report" />
+   <view inputState="Routed" program="netgen" contextTags="FPGA_ONLY" hidden="if_missing" type="Secondary_Report" file="netgen/par/fourbit_counter_timesim.nlf" label="Post-Place and Route Simulation Model Report" />
+   <view inputState="Routed" program="netgen" hidden="if_missing" type="Secondary_Report" file="fourbit_counter_sta.nlf" label="Primetime Netlist Report" >
     <toc-item title="Top of Report" target="Release" searchDir="Forward" />
    </view>
-   <view inputState="Routed" program="ibiswriter" hidden="if_missing" type="Secondary_Report" file="Debounce.ibs" label="IBIS Model" >
+   <view inputState="Routed" program="ibiswriter" hidden="if_missing" type="Secondary_Report" file="fourbit_counter.ibs" label="IBIS Model" >
     <toc-item title="Top of Report" target="IBIS Models for" searchDir="Forward" />
     <toc-item title="Component" target="Component " />
    </view>
-   <view inputState="Routed" program="pin2ucf" contextTags="FPGA_ONLY" hidden="if_missing" type="Secondary_Report" file="Debounce.lck" label="Back-annotate Pin Report" >
+   <view inputState="Routed" program="pin2ucf" contextTags="FPGA_ONLY" hidden="if_missing" type="Secondary_Report" file="fourbit_counter.lck" label="Back-annotate Pin Report" >
     <toc-item title="Top of Report" target="pin2ucf Report File" searchDir="Forward" />
     <toc-item title="Constraint Conflicts Information" target="Constraint Conflicts Information" />
    </view>
-   <view inputState="Routed" program="pin2ucf" contextTags="FPGA_ONLY" hidden="if_missing" type="Secondary_Report" file="Debounce.lpc" label="Locked Pin Constraints" >
+   <view inputState="Routed" program="pin2ucf" contextTags="FPGA_ONLY" hidden="if_missing" type="Secondary_Report" file="fourbit_counter.lpc" label="Locked Pin Constraints" >
     <toc-item title="Top of Report" target="top.lpc" searchDir="Forward" />
     <toc-item title="Newly Added Constraints" target="The following constraints were newly added" />
    </view>
-   <view inputState="Translated" program="netgen" contextTags="CPLD_ONLY,EDK_OFF" hidden="if_missing" type="Secondary_Report" file="netgen/fit/Debounce_timesim.nlf" label="Post-Fit Simulation Model Report" />
+   <view inputState="Translated" program="netgen" contextTags="CPLD_ONLY,EDK_OFF" hidden="if_missing" type="Secondary_Report" file="netgen/fit/fourbit_counter_timesim.nlf" label="Post-Fit Simulation Model Report" />
    <view inputState="Routed" program="bitgen" contextTags="FPGA_ONLY" hidden="if_missing" type="HTML" file="usage_statistics_webtalk.html" label="WebTalk Report" />
    <view inputState="Routed" program="bitgen" contextTags="FPGA_ONLY" hidden="if_missing" type="Secondary_Report" file="webtalk.log" label="WebTalk Log File" />
   </viewgroup>

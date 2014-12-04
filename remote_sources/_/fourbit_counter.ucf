@@ -1,0 +1,11 @@
+
+# PlanAhead Generated physical constraints 
+
+NET "Q[3]" LOC = L14;
+NET "Q[2]" LOC = N14;
+NET "Q[1]" LOC = M14;
+NET "Q[0]" LOC = U18;
+NET "clockbutton" LOC = P3;
+NET "CK" LOC = L15;
+NET "direction" LOC = A10;
+NET "RESET" LOC = F6;
