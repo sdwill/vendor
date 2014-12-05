@@ -134,7 +134,7 @@ begin
 
 					-- $0.25 -> $1.25
 					elsif button = "0100" then
-						state <= d5;
+						state <= r1;
 					end if;
 					
 					-- RESET
@@ -144,7 +144,7 @@ begin
 
 				-- $0.25 purchase
 				elsif item = "0001" then
-					state <= c0;
+					state <= c;
 					
 				-- No input, or purchase of something that is too expensive
 				else
@@ -156,15 +156,50 @@ begin
 			when d2 =>
 				-- No purchase
 				if item = "0000" then
-					-- $0.25 -> $0.50
+					-- $0.50 -> $0.75
 					if button = "0001" then
 						state <= d3;
 
-					-- $0.25 -> $0.75
+					-- $0.50 -> $1.00
 					elsif button = "0010" then
 						state <= d5;
 
-					-- $0.25 -> $1.25
+					-- $.50 -> $1.50
+					elsif button = "0100" then
+						state <= r;
+					end if;
+					
+					-- RESET
+					elsif button = "1000" then
+						state <= d0;
+					end if;
+
+				-- $0.25 purchase
+				elsif item = "0001" then
+					state <= c;
+					
+				-- $0.50 purchase
+				elsif item = "0010" then
+					state <= c;
+					
+				-- No input, or purchase of something that is too expensive
+				else
+					state <= d1;
+				end if;
+
+			-- $0.75 dollar state
+			when d3 =>
+				-- No purchase
+				if item = "0000" then
+					-- $0.75 -> $1.00
+					if button = "0001" then
+						state <= d3;
+
+					-- $0.75 -> $1.25
+					elsif button = "0010" then
+						state <= r;
+
+					-- $0.75 -> $1.75
 					elsif button = "0100" then
 						state <= d5;
 					end if;
@@ -176,30 +211,22 @@ begin
 
 				-- $0.25 purchase
 				elsif item = "0001" then
-					state <= c0;
+					state <= c;
+				
+				-- $0.50 purchase
+				elsif item = "0010" then
+					state <= c;
 					
+				-- $0.75 purchase	
+				elsif item = "0100" then
+					state <= c;
+				
 				-- No input, or purchase of something that is too expensive
 				else
 					state <= d1;
 				end if;
-
-			-- $0.75 dollar state
-			when d3 =>
-
 			-- $1.00 dollar state
 			when d4 =>
-
-			-- $1.25 dollar state
-			when d5 =>
-
-			-- $1.50 dollar state
-			when d6 =>
-
-			-- $1.75 dollar state
-			when d7 =>
-
-			-- $2.00 dollar state
-			when d8 =>
 
 			-- $0.00 change state
 			when c0 =>
