@@ -46,13 +46,13 @@ architecture Behavioral of main is
 
 -- Inputs are 8 bits
 -- Outputs are 8 bits
-type state_type is (d0, d1, d2, d3, d4, d5, d6, d7, d8, C);
+type state_type is (d0, d1, d2, d3, d4, r1, r2, r3, r4);
 
 -- Create an internal signal of the state_type type
 signal state: state_type;
 
 -- Create an internal signal to hold the signal from the money
-signal money: in STD_LOGIC_VECTOR(3 downto 0);
+signal money: STD_LOGIC_VECTOR(3 downto 0);
 
 -- Here, we declare our debounce component, which is responsible for cleaning the physical signals
 -- from the buttons on the board
@@ -97,20 +97,22 @@ begin
 		case state is
 			-- $0.00 dollar state
 			when d0 =>
-				LED
 				-- All possible inputs and no item selected
 				if item = "0000" then
 					-- $0.00 -> $0.25
-					if button = "0001" then
+					if money = "0001" then
 						state <= d1;
+						LED <= "00000001";
 
 					-- $0.00 -> $0.50
-					elsif button = "0010" then
+					elsif money = "0010" then
 						state <= d2;
-
+						LED <= "00000010";
+						
 					-- $0.00 -> $1.00
 					elsif button = "0100" then
 						state <= d4;
+						LED <= "00000100";
 					end if;
 
 				-- If we selected some item to be purchased, then stay in the current state because we don't have any
@@ -118,6 +120,7 @@ begin
 				-- there's no change to refund when the reset signal comes in
 				else
 					state <= d0;
+					LED <= "00000000";
 				end if;
 
 			-- $0.25 dollar state
@@ -127,28 +130,34 @@ begin
 					-- $0.25 -> $0.50
 					if button = "0001" then
 						state <= d2;
+						LED <= "00000010";
 
 					-- $0.25 -> $0.75
 					elsif button = "0010" then
 						state <= d3;
+						LED <= "00000011";
 
 					-- $0.25 -> $1.25
 					elsif button = "0100" then
 						state <= r1;
+						LED <= "00000001";
 					end if;
 					
 					-- RESET
 					elsif button = "1000" then
 						state <= d0;
+						LED <= "00000001";
 					end if;
 
 				-- $0.25 purchase
 				elsif item = "0001" then
-					state <= c;
+					state <= d0;
+					LED <= "00010000";
 					
 				-- No input, or purchase of something that is too expensive
 				else
 					state <= d1;
+					LED <= "00000001";
 				end if;
 
 
@@ -159,32 +168,38 @@ begin
 					-- $0.50 -> $0.75
 					if button = "0001" then
 						state <= d3;
+						LED <= "00000011";
 
 					-- $0.50 -> $1.00
 					elsif button = "0010" then
-						state <= d5;
+						state <= d4;
+						LED <= "00000100";
 
 					-- $.50 -> $1.50
 					elsif button = "0100" then
-						state <= r;
+						state <= r2;
+						LED <= "00000010";
 					end if;
 					
 					-- RESET
 					elsif button = "1000" then
 						state <= d0;
+						LED <= "00000010";
 					end if;
 
 				-- $0.25 purchase
 				elsif item = "0001" then
-					state <= c;
+					state <= d0;
+					LED <= "00010001";
 					
 				-- $0.50 purchase
 				elsif item = "0010" then
-					state <= c;
-					
+					state <= d0;
+					LED <= "00010000";
 				-- No input, or purchase of something that is too expensive
 				else
-					state <= d1;
+					state <= d2;
+					LED <= "00000010";
 				end if;
 
 			-- $0.75 dollar state
@@ -194,63 +209,111 @@ begin
 					-- $0.75 -> $1.00
 					if button = "0001" then
 						state <= d3;
+						LED <= "00000011";
 
 					-- $0.75 -> $1.25
 					elsif button = "0010" then
-						state <= r;
+						state <= r3;
+						LED <= "00000001";
 
 					-- $0.75 -> $1.75
 					elsif button = "0100" then
-						state <= d5;
+						state <= r3;
+						LED <= "00000011";
 					end if;
 					
 					-- RESET
 					elsif button = "1000" then
 						state <= d0;
+						LED <= "00000011";
 					end if;
 
 				-- $0.25 purchase
 				elsif item = "0001" then
-					state <= c;
+					state <= d0;
+					LED <= "00010010";
 				
 				-- $0.50 purchase
 				elsif item = "0010" then
-					state <= c;
+					state <= d0;
+					LED <= "00100001";
 					
 				-- $0.75 purchase	
 				elsif item = "0100" then
-					state <= c;
+					state <= d0;
+					LED <= "01000000";
 				
 				-- No input, or purchase of something that is too expensive
 				else
-					state <= d1;
-				end if;
+					state <= d3
+					LED <= "00000011";
+					end if;
+				
 			-- $1.00 dollar state
 			when d4 =>
+				-- No purchase
+				if item = "0000" then
+					-- $1.00 -> $1.25
+					if button = "0001" then
+						state <= r4;
+						LED <= "00000001";
 
-			-- $0.00 change state
-			when c0 =>
+					-- $1.00 -> $1.50
+					elsif button = "0010" then
+						state <= r4;
+						LED <= "00000010";
 
-			-- $0.25 change state
-			when c1 =>
+					-- $1.00 -> $2.00
+					elsif button = "0100" then
+						state <= r4;
+						LED <= "00000011";
+					end if;
+					
+					-- RESET
+					elsif button = "1000" then
+						state <= d0;
+						LED <= "00000000";
+					end if;
 
-			-- $0.50 change state
-			when c2 =>
-
-			-- $0.75 change state
-			when c3 =>
-
-			-- $1.00 change state
-			when c4 =>
-
-			-- $1.25 change state
-			when c5 =>
-
-			-- $1.50 change state
-			when c6 =>
-
-			-- $1.75 change state
-			when c7 =>
+				-- $0.25 purchase
+				elsif item = "0001" then
+					state <= d0;
+					LED <= "00010011";
+				
+				-- $0.50 purchase
+				elsif item = "0010" then
+					state <= d0
+					LED <= "00100010";					
+				-- $0.75 purchase	
+				elsif item = "0100" then
+					state <= d0;
+					LED <= "01000001";
+				-- $0.75 purchase	
+				elsif item = "1000" then
+					state <= d0;
+					LED <= "10000000";
+				-- No input
+				else
+					state <= d4;
+				end if;
+				
+			-- %0.25 return state	
+			when r1 =>
+				state <= d1;
+				LED <= "00000001";
+			-- %0.50 return state
+			when r2 =>
+				state <= d2;
+				LED <= "00000010";
+			-- %0.75 return state	
+			when r3 =>
+				state <= d3;
+				LED <= "00000011";
+			-- %1.00 return state
+			when r4 =>
+				state <= d4;
+				LED <= "00000100";
+				
 		end case;
 	end if;
 end process
