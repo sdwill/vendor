@@ -41,8 +41,7 @@ end main;
 architecture Behavioral of main is
 
 -- Create a new datatype called state_type whose legal values are any dollar value
--- between $0.00 and $2.00 (states d0-d8), or any change value between $0.00 and
--- $1.75 (states c1-c7)
+-- between $0.00 and $1.00 (states d0-d4) and overflow return values (r1-r4)
 
 -- Inputs are 8 bits
 -- Outputs are 8 bits
@@ -56,20 +55,21 @@ signal money: STD_LOGIC_VECTOR(3 downto 0);
 
 -- Here, we declare our debounce component, which is responsible for cleaning the physical signals
 -- from the buttons on the board
-component Debounce is
-	port (Button, CLK : in std_logic;
-		  De_Button : out std_logic);
-end component;
+--component Debounce is
+--	port (Button, CLK : in std_logic;
+--		  De_Button : out std_logic);
+--end component;
 
+begin
 -- Clean each bit of the physical signal from the buttons individually, and then output the bits of the
 -- "money" vector, which holds the coin input value
-db0: Debounce port map (button(0), clk_100MHz, money(0));
-db1: Debounce port map (button(1), clk_100MHz, money(1));
-db2: Debounce port map (button(2), clk_100MHz, money(2));
-db3: Debounce port map (button(3), clk_100MHz, money(3)); 
+--db0: Debounce port map (button(0), clk_100MHz, money(0));
+--db1: Debounce port map (button(1), clk_100MHz, money(1));
+--db2: Debounce port map (button(2), clk_100MHz, money(2));
+--db3: Debounce port map (button(3), clk_100MHz, money(3)); 
 
 -- RESETPIN NEEDS TO BE MAPPED AS SOMETHING ELSE BEFORE THIS WILL WORK
-machine: process(clk, resetpin)
+machine: process
 
 -- We have three possible money inputs, so they will be encoded as a four-bit vector on the buttons
 --		$0.25 <==> 0001
@@ -92,8 +92,8 @@ machine: process(clk, resetpin)
 -- input = ..?
 
 begin
-	if rising_edge(clk) then
-		-- Need to set up the 'input' signal as well
+	if rising_edge(clk_100MHz) then
+--		-- Need to set up the 'input' signal as well
 		case state is
 			-- $0.00 dollar state
 			when d0 =>
@@ -141,7 +141,6 @@ begin
 					elsif button = "0100" then
 						state <= r1;
 						LED <= "00000001";
-					end if;
 					
 					-- RESET
 					elsif button = "1000" then
@@ -179,8 +178,7 @@ begin
 					elsif button = "0100" then
 						state <= r2;
 						LED <= "00000010";
-					end if;
-					
+
 					-- RESET
 					elsif button = "1000" then
 						state <= d0;
@@ -220,7 +218,6 @@ begin
 					elsif button = "0100" then
 						state <= r3;
 						LED <= "00000011";
-					end if;
 					
 					-- RESET
 					elsif button = "1000" then
@@ -245,7 +242,7 @@ begin
 				
 				-- No input, or purchase of something that is too expensive
 				else
-					state <= d3
+					state <= d3;
 					LED <= "00000011";
 					end if;
 				
@@ -267,7 +264,6 @@ begin
 					elsif button = "0100" then
 						state <= r4;
 						LED <= "00000011";
-					end if;
 					
 					-- RESET
 					elsif button = "1000" then
@@ -282,7 +278,7 @@ begin
 				
 				-- $0.50 purchase
 				elsif item = "0010" then
-					state <= d0
+					state <= d0;
 					LED <= "00100010";					
 				-- $0.75 purchase	
 				elsif item = "0100" then
@@ -316,7 +312,7 @@ begin
 				
 		end case;
 	end if;
-end process
+end process;
 
 
 end Behavioral;
