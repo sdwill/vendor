@@ -52,13 +52,19 @@ signal state: state_type;
 
 -- Create an internal signal to hold the signal from the money
 signal money: STD_LOGIC_VECTOR(3 downto 0);
+signal clk_1Hz : STD_LOGIC;
 
 -- Here, we declare our debounce component, which is responsible for cleaning the physical signals
 -- from the buttons on the board
---component Debounce is
---	port (Button, CLK : in std_logic;
---		  De_Button : out std_logic);
---end component;
+component Debounce is
+	port (Button, CLK : in std_logic;
+		  De_Button : out std_logic);
+end component;
+
+component ck_divider is
+    Port ( CK_IN : in  STD_LOGIC;
+           CK_OUT : out  STD_LOGIC);
+end component;
 
 begin
 -- Clean each bit of the physical signal from the buttons individually, and then output the bits of the
@@ -67,7 +73,7 @@ begin
 --db1: Debounce port map (button(1), clk_100MHz, money(1));
 --db2: Debounce port map (button(2), clk_100MHz, money(2));
 --db3: Debounce port map (button(3), clk_100MHz, money(3)); 
-
+divide : ck_divider port map (clk_100MHz, clk_1Hz);
 -- RESETPIN NEEDS TO BE MAPPED AS SOMETHING ELSE BEFORE THIS WILL WORK
 machine: process
 
@@ -92,7 +98,7 @@ machine: process
 -- input = ..?
 
 begin
-	if rising_edge(clk_100MHz) then
+	if rising_edge(clk_1Hz) then
 --		-- Need to set up the 'input' signal as well
 		case state is
 			-- $0.00 dollar state
@@ -100,12 +106,12 @@ begin
 				-- All possible inputs and no item selected
 				if item = "0000" then
 					-- $0.00 -> $0.25
-					if money = "0001" then
+					if button = "0001" then
 						state <= d1;
 						LED <= "00000001";
 
 					-- $0.00 -> $0.50
-					elsif money = "0010" then
+					elsif button = "0010" then
 						state <= d2;
 						LED <= "00000010";
 						

@@ -12,7 +12,7 @@ end ck_divider;
 
 architecture Behavioral of ck_divider is
 
-constant TIMECONST : integer := 20;
+constant TIMECONST : integer := 84;
 signal count0, count1, count2, count3 : integer range 0 to 1000;
 signal D : std_logic := '0';
 begin

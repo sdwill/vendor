@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\Kyle\Desktop\GitHub\vendor\main.ncd
+OUTFILE=C:\Users\Kyle\Desktop\GitHub\vendor\main.bit
+FAMILY=Spartan6
+PART=xc6slx45-3csg324
+WORKINGDIR=C:\Users\Kyle\Desktop\GitHub\vendor
+LICENSE=WebPack
+USER_INFO=210829494_0_0_406
