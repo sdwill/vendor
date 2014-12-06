@@ -1,0 +1,3 @@
+vhdl work "DFF.vhd"
+vhdl work "ck_divider.vhd"
+vhdl work "Debounce.vhd"

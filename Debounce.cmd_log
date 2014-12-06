@@ -1,0 +1,2 @@
+xst -intstyle ise -filter "C:/Users/Scott/Google Drive/School Docs/EE/EE478/Final Project/vendor/iseconfig/filter.filter" -ifn "C:/Users/Scott/Google Drive/School Docs/EE/EE478/Final Project/vendor/Debounce.xst" -ofn "C:/Users/Scott/Google Drive/School Docs/EE/EE478/Final Project/vendor/Debounce.syr" 
+ngdbuild -filter "iseconfig/filter.filter" -intstyle ise -dd _ngo -nt timestamp -uc main.ucf -p xc6slx45-csg324-3 "Debounce.ngc" Debounce.ngd  

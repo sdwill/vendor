@@ -174,7 +174,7 @@ begin
 						state <= d4;
 						LED <= "00000100";
 
-					-- $.50 -> $1.50
+					-- $0.50 -> $1.50
 					elsif button = "0100" then
 						state <= r2;
 						LED <= "00000010";
@@ -293,19 +293,22 @@ begin
 					state <= d4;
 				end if;
 				
-			-- %0.25 return state	
+			-- $0.25 return state	
 			when r1 =>
 				state <= d1;
 				LED <= "00000001";
-			-- %0.50 return state
+			
+			-- $0.50 return state
 			when r2 =>
 				state <= d2;
 				LED <= "00000010";
-			-- %0.75 return state	
+			
+			-- $0.75 return state	
 			when r3 =>
 				state <= d3;
 				LED <= "00000011";
-			-- %1.00 return state
+			
+			-- $1.00 return state
 			when r4 =>
 				state <= d4;
 				LED <= "00000100";
