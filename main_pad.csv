@@ -1,7 +1,7 @@
 #Release 14.7 - par P.20131013 (nt64)
 #Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-#Fri Dec 05 19:33:13 2014
+#Sat Dec 06 13:51:46 2014
 
 #
 ## NOTE: This file is designed to be imported into a spreadsheet program
@@ -114,7 +114,7 @@ F2,,IOBM,IO_L48P_M3BA0_3,UNUSED,,3,,,,,,,,,
 F3,,IOBS,IO_L51N_M3A4_3,UNUSED,,3,,,,,,,,,
 F4,,IOBM,IO_L51P_M3A10_3,UNUSED,,3,,,,,,,,,
 F5,button<1>,IOB,IO_L55N_M3A14_3,INPUT,LVCMOS25*,3,,,,NONE,,LOCATED,NO,NONE,
-F6,button<2>,IOB,IO_L55P_M3A13_3,INPUT,LVCMOS25*,3,,,,NONE,,LOCATED,NO,NONE,
+F6,button<0>,IOB,IO_L55P_M3A13_3,INPUT,LVCMOS25*,3,,,,NONE,,LOCATED,NO,NONE,
 F7,,,NC,,,,,,,,,,,,
 F8,,,NC,,,,,,,,,,,,
 F9,,IOBS,IO_L38N_VREF_0,UNUSED,,0,,,,,,,,,
@@ -256,7 +256,7 @@ N18,,IOBS,IO_L48N_M1DQ9_1,UNUSED,,1,,,,,,,,,
 P1,,IOBS,IO_L34N_M3UDQSN_3,UNUSED,,3,,,,,,,,,
 P2,,IOBM,IO_L34P_M3UDQS_3,UNUSED,,3,,,,,,,,,
 P3,,IOBS,IO_L2N_3,UNUSED,,3,,,,,,,,,
-P4,button<0>,IOB,IO_L2P_3,INPUT,LVCMOS25*,3,,,,NONE,,LOCATED,NO,NONE,
+P4,button<2>,IOB,IO_L2P_3,INPUT,LVCMOS25*,3,,,,NONE,,LOCATED,NO,NONE,
 P5,,,VCCAUX,,,,,,,,2.5,,,,
 P6,,IOBS,IO_L64N_D9_2,UNUSED,,2,,,,,,,,,
 P7,,IOBS,IO_L47N_2,UNUSED,,2,,,,,,,,,

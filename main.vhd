@@ -103,6 +103,7 @@ begin
 		case state is
 			-- $0.00 dollar state
 			when d0 =>
+				LED <= "00000000";
 				-- All possible inputs and no item selected
 				if item = "0000" then
 					-- $0.00 -> $0.25
@@ -145,7 +146,7 @@ begin
 
 					-- $0.25 -> $1.25
 					elsif button = "0100" then
-						state <= r1;
+						state <= r4;
 						LED <= "00000001";
 					
 					-- RESET
@@ -182,7 +183,7 @@ begin
 
 					-- $.50 -> $1.50
 					elsif button = "0100" then
-						state <= r2;
+						state <= r4;
 						LED <= "00000010";
 
 					-- RESET
@@ -199,7 +200,7 @@ begin
 				-- $0.50 purchase
 				elsif item = "0010" then
 					state <= d0;
-					LED <= "00010000";
+					LED <= "00100000";
 				-- No input, or purchase of something that is too expensive
 				else
 					state <= d2;
@@ -212,17 +213,17 @@ begin
 				if item = "0000" then
 					-- $0.75 -> $1.00
 					if button = "0001" then
-						state <= d3;
-						LED <= "00000011";
+						state <= d4;
+						LED <= "00000100";
 
 					-- $0.75 -> $1.25
 					elsif button = "0010" then
-						state <= r3;
+						state <= r4;
 						LED <= "00000001";
 
 					-- $0.75 -> $1.75
 					elsif button = "0100" then
-						state <= r3;
+						state <= r4;
 						LED <= "00000011";
 					
 					-- RESET
@@ -269,7 +270,7 @@ begin
 					-- $1.00 -> $2.00
 					elsif button = "0100" then
 						state <= r4;
-						LED <= "00000011";
+						LED <= "00000100";
 					
 					-- RESET
 					elsif button = "1000" then
@@ -290,7 +291,7 @@ begin
 				elsif item = "0100" then
 					state <= d0;
 					LED <= "01000001";
-				-- $0.75 purchase	
+				-- $1.00 purchase	
 				elsif item = "1000" then
 					state <= d0;
 					LED <= "10000000";

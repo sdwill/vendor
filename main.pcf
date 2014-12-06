@@ -1,12 +1,12 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Fri Dec 05 19:32:59 2014
+// Written by: Map P.20131013 on Sat Dec 06 13:51:29 2014
 //! **************************************************************************
 
 SCHEMATIC START;
 COMP "clk_100MHz" LOCATE = SITE "L15" LEVEL 1;
-COMP "button<0>" LOCATE = SITE "P4" LEVEL 1;
+COMP "button<0>" LOCATE = SITE "F6" LEVEL 1;
 COMP "button<1>" LOCATE = SITE "F5" LEVEL 1;
-COMP "button<2>" LOCATE = SITE "F6" LEVEL 1;
+COMP "button<2>" LOCATE = SITE "P4" LEVEL 1;
 COMP "button<3>" LOCATE = SITE "N4" LEVEL 1;
 COMP "LED<0>" LOCATE = SITE "U18" LEVEL 1;
 COMP "LED<1>" LOCATE = SITE "M14" LEVEL 1;
