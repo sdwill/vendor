@@ -1,9 +1,10 @@
 ----------------------------------------------------------------------------------
 -- Company: 
--- Engineer: 
+-- Engineer: 	    Scott Will (50003395)
+--						 Kyle Thompson (36870784)
 -- 
 -- Create Date:    21:59:26 11/29/2014 
--- Design Name: 
+-- Design Name: 	 EE478 Vending Machine
 -- Module Name:    main - Behavioral 
 -- Project Name: 
 -- Target Devices: 
@@ -45,7 +46,7 @@ architecture Behavioral of main is
 
 -- Inputs are 8 bits
 -- Outputs are 8 bits
-type state_type is (d0, d1, d2, d3, d4, r1, r2, r3, r4);
+type state_type is (d0, d1, d2, d3, d4, r4);
 
 -- Create an internal signal of the state_type type
 signal state: state_type;
@@ -74,7 +75,6 @@ begin
 --db2: Debounce port map (button(2), clk_100MHz, money(2));
 --db3: Debounce port map (button(3), clk_100MHz, money(3)); 
 divide : ck_divider port map (clk_100MHz, clk_1Hz);
--- RESETPIN NEEDS TO BE MAPPED AS SOMETHING ELSE BEFORE THIS WILL WORK
 machine: process
 
 -- We have three possible money inputs, so they will be encoded as a four-bit vector on the buttons
@@ -300,19 +300,6 @@ begin
 					state <= d4;
 				end if;
 				
-			-- %0.25 return state	
-			when r1 =>
-				state <= d1;
-				LED <= "00000001";
-			-- %0.50 return state
-			when r2 =>
-				state <= d2;
-				LED <= "00000010";
-			-- %0.75 return state	
-			when r3 =>
-				state <= d3;
-				LED <= "00000011";
-			-- %1.00 return state
 			when r4 =>
 				state <= d4;
 				LED <= "00000100";

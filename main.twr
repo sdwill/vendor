@@ -37,11 +37,11 @@ Clock to Setup on destination clock clk_100MHz
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk_100MHz     |    4.421|         |         |         |
+clk_100MHz     |    3.629|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Sat Dec 06 13:51:57 2014 
+Analysis completed Tue Dec 09 17:34:02 2014 
 --------------------------------------------------------------------------------
 
 Trace Settings:
