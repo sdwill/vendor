@@ -1,7 +1,7 @@
 ----------------------------------------------------------------------------------
 -- Company: 
 -- Engineer: 	    Scott Will (50003395)
---						 Kyle Thompson (36870784)
+--					Kyle Thompson (36870784)
 -- 
 -- Create Date:    21:59:26 11/29/2014 
 -- Design Name: 	 EE478 Vending Machine
@@ -42,7 +42,7 @@ end main;
 architecture Behavioral of main is
 
 -- Create a new datatype called state_type whose legal values are any dollar value
--- between $0.00 and $1.00 (states d0-d4) and overflow return values (r1-r4)
+-- between $0.00 and $1.00 (states d0-d4) and overflow return value (r4)
 
 -- Inputs are 8 bits
 -- Outputs are 8 bits
@@ -53,14 +53,8 @@ signal state: state_type;
 
 -- Create an internal signal to hold the signal from the money
 signal money: STD_LOGIC_VECTOR(3 downto 0);
+-- Signal for 1Hz clock
 signal clk_1Hz : STD_LOGIC;
-
--- Here, we declare our debounce component, which is responsible for cleaning the physical signals
--- from the buttons on the board
-component Debounce is
-	port (Button, CLK : in std_logic;
-		  De_Button : out std_logic);
-end component;
 
 component ck_divider is
     Port ( CK_IN : in  STD_LOGIC;
@@ -68,12 +62,7 @@ component ck_divider is
 end component;
 
 begin
--- Clean each bit of the physical signal from the buttons individually, and then output the bits of the
--- "money" vector, which holds the coin input value
---db0: Debounce port map (button(0), clk_100MHz, money(0));
---db1: Debounce port map (button(1), clk_100MHz, money(1));
---db2: Debounce port map (button(2), clk_100MHz, money(2));
---db3: Debounce port map (button(3), clk_100MHz, money(3)); 
+-- Divides the clock to 1Hz
 divide : ck_divider port map (clk_100MHz, clk_1Hz);
 machine: process
 
@@ -93,9 +82,6 @@ machine: process
 
 -- All inputs are 8-bit vectors structured as xxxx|xxxx where the left four bits are the money input and the right four
 -- are the item selection
-
-
--- input = ..?
 
 begin
 	if rising_edge(clk_1Hz) then
@@ -299,7 +285,8 @@ begin
 				else
 					state <= d4;
 				end if;
-				
+			
+			-- Excess return state
 			when r4 =>
 				state <= d4;
 				LED <= "00000100";
