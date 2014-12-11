@@ -53,6 +53,7 @@ signal state: state_type;
 
 -- Create an internal signal to hold the signal from the money
 signal money: STD_LOGIC_VECTOR(3 downto 0);
+
 -- Signal for 1Hz clock
 signal clk_1Hz : STD_LOGIC;
 
@@ -62,6 +63,7 @@ component ck_divider is
 end component;
 
 begin
+
 -- Divides the clock to 1Hz
 divide : ck_divider port map (clk_100MHz, clk_1Hz);
 machine: process
@@ -85,7 +87,6 @@ machine: process
 
 begin
 	if rising_edge(clk_1Hz) then
---		-- Need to set up the 'input' signal as well
 		case state is
 			-- $0.00 dollar state
 			when d0 =>
